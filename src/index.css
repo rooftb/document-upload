@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+    font-family: "Aspira";
+    src: url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.eot");
+    src: url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/37cfc8402eabbb5e620db7567f19ef25.svg#Aspira-Demi")format("svg");
+}
+
+@font-face {
+    font-family: "FSP DEMO - Olyford ExtLt";
+    src: url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.eot");
+    src: url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/77364902ff5e2b389269dbbbe58b4553.svg#FSP DEMO - Olyford ExtLt")format("svg");
+}
+
+#root {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+body {
+    background-color: #b3b3b3;
+}
+
+input[type='radio'] {
+    accent-color: #1c3e6e;
+    @apply w-5 h-5 text-primary bg-gray-100 border-gray-300 focus:ring-primary;
+}
+
+.document-title {
+    width: 306px;
+    line-height: 50px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.primary-text {
+    @apply font-primary text-primary text-sm inline-flex w-full mb-1;
+}
+
+.success-text {
+    @apply font-light text-green-600 text-sm inline-flex w-full;
+}
+
+.info-text {
+    @apply text-sm font-secondary text-primary;
+}
+
+.toggle-switch {
+    transform: scale(0.75)
+}
+
+.clock-icon {
+    -webkit-transform: rotate(140deg);
+    -ms-transform: rotate(140deg);
+    transform: rotate(140deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.file-progress {
+    color: #b3b3b3
+}
+
+@tailwind utilities;
