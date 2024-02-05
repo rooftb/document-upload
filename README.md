@@ -10,9 +10,13 @@ Thank you for your consideration.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install.
+Live on Vercel: https://document-upload-app-submission.vercel.app/
+
+or
 
 To run locally:
+
+Use the package manager [npm](https://www.npmjs.com/) to install.
 
 ```bash
 cd document-upload
