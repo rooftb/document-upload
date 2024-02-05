@@ -12,8 +12,6 @@ Thank you for your consideration.
 
 Live on Vercel: https://document-upload-app-submission.vercel.app/
 
-or
-
 To run locally:
 
 Use the package manager [npm](https://www.npmjs.com/) to install.
