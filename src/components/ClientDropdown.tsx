@@ -11,7 +11,8 @@ export default function ClientDropdown() {
       };
     });
   
-    function handleShowMenu() {
+    function handleShowMenu(e) {
+      e.preventDefault();
       setEnabled(!enabled);
     }
   
