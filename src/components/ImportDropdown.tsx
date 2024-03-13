@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function ImportDropdown() {
     const [enabled, setEnabled] = useState(true);
+    const importRef = useRef(null);
+
+    useEffect(() => {
+      document.addEventListener('mousedown', handleOutsideClick);
+      return () => {
+        document.removeEventListener('mousedown', handleOutsideClick);
+      };
+    });
   
     function handleShowMenu() {
       setEnabled(!enabled);
+    }
+  
+    function handleOutsideClick(e) {
+      if (importRef.current && !importRef.current.contains(e.target)) {
+        setEnabled(true);
+      }
     }
   
     return (
@@ -38,10 +52,12 @@ export default function ImportDropdown() {
           className={` absolute z-10 ${
             enabled && 'hidden'
           } bg-white divide-y divide-gray-100 rounded-lg shadow`}
+          ref={importRef}
         >
           <ul
             className='py-2 text-primary font-primary text-sm w-[525px]'
             aria-labelledby='dropdownDefaultButton'
+            onClick={handleShowMenu}
           >
             <li>
               <a href='#' className='block px-4 py-2 hover:bg-gray-100'>

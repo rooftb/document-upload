@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function ClientDropdown() {
     const [enabled, setEnabled] = useState(true);
+    const clientRef = useRef(null);
+
+    useEffect(() => {
+      document.addEventListener('mousedown', handleOutsideClick);
+      return () => {
+        document.removeEventListener('mousedown', handleOutsideClick);
+      };
+    });
   
     function handleShowMenu() {
       setEnabled(!enabled);
+    }
+  
+    function handleOutsideClick(e) {
+      if (clientRef.current && !clientRef.current.contains(e.target)) {
+        setEnabled(true);
+      }
     }
   
     return (
@@ -38,6 +52,8 @@ export default function ClientDropdown() {
           className={`absolute z-10 ${
             enabled && 'hidden'
           } bg-white divide-y divide-gray-100 rounded-lg shadow`}
+          ref={clientRef}
+          onClick={handleShowMenu}
         >
           <ul
             className='py-2 info-text w-[140px]'
